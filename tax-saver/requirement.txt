@@ -1,0 +1,13 @@
+CTC = 20 LAKHS
+
+Expenses:
+    Household: 9 Lakhs
+
+
+
+Taxable income:
+    Standard deduction: 20Lakh - 50,000/-  ==> 19.5 Lakhs
+
+
+Salary structure:
+    1. Don't get all in Basic Salary, have HRA in it. 
