@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>QRNote</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+
+        <!--Header-->
+        <h1 class="header">QRNote</h1>
+        
+        <!--Navigation Bar-->
+        <div class="navbar">
+            <!--Background Color-->
+            <select id="colors">
+                <option style="background-color:orange;">Orange</option>
+                <option style="background-color:yellow;">Yellow</option>
+                <option style="background-color:grey;">Grey</option>
+                <option style="background-color:white;">White</option>
+                <option style="background-color:green;">Green</option>
+                <option style="background-color:lightblue;">Lightblue</option>
+            </select>
+            <button id="colors_submit" onclick="changeBackground();">Change Color</button>
+
+            <ul>Navigation:</ul>
+            <li><a href="/create" class="navbar_item_selected">Create a Note</a></li>
+            <li><a href="/delete" class="navbar_item">Delete a Note</a></li>
+            <li><a href="/home" class="navbar_item">View QR</a></li>
+            <ul>Note list:</ul>
+            <form method="post">
+            {%for i in range(0,len)%}
+            <li class="note_list">{{notes[i]}}</li>
+            {%endfor%}
+            </form>
+        </div>
+
+            <!--Text Input Field-->
+            <form method="post">
+                <label>Enter note name:</label><br>
+                <input class="note_name" type="text" name="note_name" autocomplete="off"><br><br>
+                <label>Begin typing (or pasting) your note:</label><br><br>
+                <textarea rows="25" cols="100" name="note"></textarea><br><br>
+                <input class="submit" type="submit" value="Create QR">
+            </form>
+
+        <!--Footer-->
+        <div class="footer">
+            <footer>
+                <p class="footerText">
+                    © 2022 tdeerenberg |
+                    <a href="https://github.com/tdeerenberg" target="_blank">Github</a> |
+                    <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank">GPLv3 License</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

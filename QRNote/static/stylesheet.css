@@ -1,0 +1,170 @@
+body {
+    font-family: "Monospace", monospace;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+    color: black;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    background-color: #32363e;
+    top: 0%;
+    margin-top: 0%;
+    padding: 1%;
+    color: yellow;
+    margin-left: 20%;
+}
+
+#colors {
+    margin-left: 10%;
+    background-color: #515253;
+    color: white;
+    padding: 0.5%;
+    font-size: 16px;
+    font-family: "Monospace", monospace;    
+}
+
+#colors_submit {
+    background-color: #515253;
+    color: white;
+    padding: 0.5%;
+    font-size: 16px;
+    font-family: "Monospace", monospace;  
+}
+
+.header_login {
+    background-color: #32363e;
+    top: 0%;
+    margin-top: 0%;
+    padding: 1%;
+    color: white;
+}
+
+.navbar {
+    text-align: left;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    background-color: #32363e;
+    font-weight: bold;
+    font-size: 25px;
+    top: 0%;
+    width: 20%;
+    margin-left: 0%;
+    color: yellow;
+}
+
+li {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar_item {
+    text-decoration: none;
+    color: white;
+    margin-left: 10%;
+}
+
+.navbar_item:hover {
+    color:#a5a8ad;
+}
+
+.navbar_item_selected {
+    color: #a5a8ad;
+    text-decoration: none;
+    margin-left: 10%;
+}
+
+.qr {
+    max-width: 40%;
+    max-height: 40%;
+    margin-left: 20%;
+}
+
+textarea {
+    border-color: #32363e;
+    border-radius: 1%;
+    margin-left: 20%;
+}
+
+.note_name {
+    border-color: #32363e;
+    border-radius: 1%;
+    margin-left: 20%;
+}
+
+.note_list {
+    margin-left: 10%;
+    list-style-type: none;
+}
+
+label {
+    margin-left: 20%;
+}
+
+p1 {
+    font-weight: bold;
+}
+
+.form_text {
+    margin-left: 0%;
+    font-weight: bold;
+}
+
+.submit {
+    margin-left: 20%;
+    background-color: #32363e;
+    color: white;
+    padding: 1%;
+    font-size: 16px;
+    font-family: "Monospace", monospace;
+}
+
+.submit_login {
+    margin-left: 0%;
+    background-color: #32363e;
+    color: white;
+    padding: 1%;
+    font-size: 16px;
+    font-family: "Monospace", monospace;
+}
+
+.submit_login:hover {
+    background-color: #515253;
+}
+
+.submit:hover {
+    background-color: #515253;
+}
+
+.footer {
+    background-color: #32363e;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin-left: 20%;
+    height: 5%;
+}
+
+.footer_login {
+    background-color: #32363e;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 5%;
+}
+
+.footerText {
+    color: yellow;
+    text-decoration: none;
+}
+
+.footerText a {
+    color: yellow;
+    text-decoration: none;
+}
