@@ -1,5 +1,5 @@
-.git
-.vscode
-__pycahce__
-.idea
+.git/
+.vscode/
+__pycahce__/
+.idea/
 .ipynb_checkpoints/
