@@ -1,16 +1,38 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from urllib.request import urlopen
+from selenium import webdriver
+import time
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def browser_access_check():
+    html = urlopen(url='https://en.wikipedia.org/wiki/India')
+    file_path = r'C:\Users\skumar\Desktop\python-projects\web-scraping\index.html'
+    with open(file_path, 'w') as f:
+        f.write(str(html.read()))
+        print('Done!!!')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+driver_path = r'C:\Users\skumar\Desktop\python-projects\web-scraping\chromedriver.exe'
+google_homepage = r'https://google.com/'
+
+driver = webdriver.Chrome(executable_path=driver_path)
+driver.maximize_window()
+driver.get(url=google_homepage)
+# to print information of web-page
+print(driver.title)
+print(driver.current_url)
+
+driver.find_element_by_name('q').send_keys('Narendra Modi')
+time.sleep(5)
+driver.find_element_by_name('btnK').click()
+
+# print('goes backward')
+# driver.back()
+# print(driver.title)
+# print(driver.current_url)
+#
+# print('*'*15)
+# print('goes forward')
+# driver.forward()
+# print(driver.title)
+# print(driver.current_url)
+# driver.close()
