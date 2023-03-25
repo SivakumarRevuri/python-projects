@@ -1,31 +1,45 @@
 from employee import Employee
-import employee_dao as ed
+import employee_dao as emp_dao
 import mysql.connector as ms
+from datetime import datetime
+from faker import Faker
 
 
-def save_employee():
-    """
-    insert into employees(emp_code,firstname,lastname,gender,mail,contact,address,position,
-date_of_birth, date_of_joining, country)
-values('INEMP000001', 'Sivakumar', 'Revuri',
-'Male','srevuri@gmail.com','9876013491', 'Bangalore', 'Software Enginner', date('1996-12-09'), date('2022-12-05'), 'India');
-    :return:
-    """
-    cntry = 'in'
-    emp_uid = 1415
-    emp_code = (cntry.upper()) + 'EMP' + str(emp_uid).zfill(6)
-    print(emp_code)
-    employee = Employee()
-    employee.set_firstname = emp_code
-    print(employee, employee.get_firstname)
-
+# collecting emp_info to add the employee
+def get_emp_info() -> Employee:
+    faker = Faker()
+    emp = Employee()
+    firstname,lastname = faker.name().split(' ')
+    emp.set_firstname(firstname); emp.set_lastname(lastname)
+    emp.set_position(faker.random_element(elements={'Assoicate','Developer','Tester', 'Manager', 'Lead'}))
+    emp.set_gender(faker.random_element(elements={'male', 'female', 'others'}))
+    emp.set_mail(faker.email())
+    emp.set_address(faker.city())
+    emp.set_dob(faker.date())
+    emp.set_doj(datetime.now())
+    # emp = Employee(firstname=firstname, lastname=lastname,position= position,gender=gender,mail=mail,
+    #                address=address,dob=dob,doj=doj)
+    return emp
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    save_employee()
-    cur = None
-    try:
-        cur = ed.get_connection()
-        print(cur[0])
-    except ms.DatabaseError as err:
-        print(err.msg)
+    print('''
+          we have differnt options with us,
+                    get: Fetching employee data
+                    add: Adding Employee
+                    modify: Updating Employee
+                    del: Deleting Employee
+          ''')
+    
+    usr_input = input('Enter your mode of operation: ')
+    match usr_input.lower():
+        case 'add':
+            emp = get_emp_info()
+            emp.__str__()
+            emp_dao.save_employee(emp)
+        case 'get':
+            pass
+        case 'modify':
+            pass
+        case 'delete':
+            pass

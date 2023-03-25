@@ -2,14 +2,14 @@ from selenium import webdriver
 
 
 # opening browser
-driver_path = r'C:\Users\skumar\Desktop\python-projects\web-scraping\chromedriver.exe'
+driver_path = r'C:\Users\skumar\Desktop\python-projects\util-libs\chromedriver.exe'
 driver = webdriver.Chrome(executable_path=driver_path)
 driver.maximize_window()
 
 # do google search
 search_link = f'https://images.google.com/'
 driver.get(search_link)
-query = input('Enter the search key: ')
+query = 'Sree Leela'
 driver.find_element_by_name('q').send_keys(query)
 
 driver.find_element_by_class_name('Tg7LZd').click()
