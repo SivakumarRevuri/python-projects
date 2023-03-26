@@ -1,6 +1,6 @@
 import random 
 
-def guess(value):
+def user_guess(value):
     random_num = random.randint(1,value)
     guess = 0
     while guess != random_num:
@@ -12,7 +12,7 @@ def guess(value):
     print('Congrats! you got a reward ', random_num)
     return random_num
 
-def find_num_ai(num):
+def ai_guess(num):
     random_number = 0
     count = 0
     min, max = 1, 10
@@ -28,5 +28,10 @@ def find_num_ai(num):
     print('great! AI guessed the', random_number,' in ', count, 'th attempt')
 
 # guess(value=10)
-num = int(input('enter a number in the range 1 to 10: '))
-find_num_ai(num=num)
+while True:
+    num = int(input('enter a number in the range 1 to 10: '))
+    if num > 1 and num < 11:
+        ai_guess(num=num)
+        break
+    else:
+        print('please enter in a valid range!!! ')
