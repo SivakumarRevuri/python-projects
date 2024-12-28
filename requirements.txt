@@ -1,2 +1,8 @@
 playsound
 imageio
+django
+flask
+fastapi
+uvicorn
+requests
+pytube
